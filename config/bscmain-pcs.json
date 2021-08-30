@@ -1,0 +1,57 @@
+{
+  "rpcURL": "https://bsc-dataseed.binance.org/",
+  "dai": "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3",
+  "daiJoin": "0x9438760f1ac27F7cFE638D686d889C56eb42F4D0",
+  "MakerOTCSupportMethods": "0x0000000000000000000000000000000000000000",
+  "OasisDex": "0x0000000000000000000000000000000000000000",
+  "UniswapV2Router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+  "vat": "0x713C28b2Ef6F89750BDf97f7Bbf307f6F949b3fF",
+  "eth": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+  "collateral": {
+    "STKCAKE-A": {
+      "name": "STKCAKE-A",
+      "decimals": 18,
+      "erc20addr": "0xB50Acf6195F97177D33D132A3E5617b934C351d3",
+      "joinAdapter": "0xf72f07b96D4Ee64d1065951cAfac032B63C767bb",
+      "clipper": "0x61C8CF1e4E1DBdF88fceDd55e2956345b4df6B21",
+      "uniswapCallee": "0x0000000000000000000000000000000000000000",
+      "uniswapRoute": [
+        "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+        "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+      ]
+    },
+    "STKPCSBNBCAKE-A": {
+      "name": "STKPCSBNBCAKE-A",
+      "decimals": 18,
+      "token0": {
+        "name": "CAKE",
+        "decimals": 18,
+        "route": [
+          "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+        ]
+      },
+      "token1": {
+        "name": "BNB",
+        "decimals": 18,
+        "route": [
+          "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+        ]
+      },
+      "erc20addr": "0xd8C76eF0de11f9cc9708EB966A87e25a7E6C7949",
+      "joinAdapter": "0x9605863bf02E983861C0a4ac28a7527Fcf36732b",
+      "clipper": "0x62711202EF9368e5401eCeaFD90E71A411286Edd",
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+    }
+  },
+  "txnReplaceTimeout": "40",
+  "delay": "40",
+  "initialGasOffsetGwei": "30",
+  "dynamicGasCoefficient": "1.125",
+  "maxGasLimit": "2000000",
+  "maxGasPrice": "1000",
+  "minProfitPercentage": "1.025",
+  "minLotDaiValue": "0",
+  "maxLotDaiValue": "1000000"
+}
