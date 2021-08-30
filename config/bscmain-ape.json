@@ -44,12 +44,12 @@
       "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
     }
   },
-  "txnReplaceTimeout": "40",
-  "delay": "40",
-  "initialGasOffsetGwei": "30",
-  "dynamicGasCoefficient": "1.125",
+  "txnReplaceTimeout": "60",
+  "delay": "60",
+  "initialGasOffsetGwei": "0",
+  "dynamicGasCoefficient": "1.000",
   "maxGasLimit": "2000000",
-  "maxGasPrice": "1000",
+  "maxGasPrice": "5",
   "minProfitPercentage": "1.025",
   "minLotDaiValue": "0",
   "maxLotDaiValue": "1000000"
