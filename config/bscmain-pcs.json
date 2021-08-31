@@ -16,8 +16,10 @@
       "clipper": "0x61C8CF1e4E1DBdF88fceDd55e2956345b4df6B21",
       "uniswapCallee": "0x0000000000000000000000000000000000000000",
       "uniswapRoute": [
+        "0xB50Acf6195F97177D33D132A3E5617b934C351d3",
         "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
-        "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+        "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+        "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3"
       ]
     },
     "STKPCSBNBCAKE-A": {
@@ -28,7 +30,8 @@
         "decimals": 18,
         "route": [
           "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
-          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+          "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3"
         ]
       },
       "token1": {
@@ -36,7 +39,8 @@
         "decimals": 18,
         "route": [
           "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+          "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3"
         ]
       },
       "erc20addr": "0xd8C76eF0de11f9cc9708EB966A87e25a7E6C7949",
