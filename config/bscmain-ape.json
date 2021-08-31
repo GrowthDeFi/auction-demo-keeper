@@ -16,10 +16,8 @@
       "clipper": "0xFFAee04Db99530DeCAe1133DbEc5fD7Cc3BcC4aD",
       "uniswapCallee": "0x0000000000000000000000000000000000000000",
       "uniswapRoute": [
-        "0x13e7A6691FE00DE975CF27868386f4aE9aed3cdC",
         "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95",
-        "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-        "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3"
+        "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
       ]
     },
     "STKAPEMORBUSD-A": {
@@ -29,20 +27,20 @@
         "name": "MOR",
         "decimals": 18,
         "route": [
-          "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3"
+          "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3",
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
         ]
       },
       "token1": {
         "name": "BUSD",
         "decimals": 18,
         "route": [
-          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-          "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3"
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
         ]
       },
-      "erc20addr": "to be determined",
-      "joinAdapter": "to be determined",
-      "clipper": "to be determined",
+      "erc20addr": "0xC2E8C3c427E0a5BaaF512A013516aECB65Bd75CB",
+      "joinAdapter": "0xF755dA11576A9C3355a854F79e4F80E00e251358",
+      "clipper": "0xa4f9600534190d96bc60D33A3594E0b0869cAdaB",
       "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
     }
   },

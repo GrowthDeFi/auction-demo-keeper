@@ -23,7 +23,7 @@ interface VatLike {
 
 interface GemJoinLike {
     function dec() external view returns (uint256);
-    function gem() external view returns (LpTokenLike);
+    function gem() external view returns (VaultLike);
     function exit(address, uint256) external;
 }
 
@@ -31,6 +31,11 @@ interface DaiJoinLike {
     function dai() external view returns (TokenLike);
     function vat() external view returns (VatLike);
     function join(address, uint256) external;
+}
+
+interface DssPsmLike {
+    function gemJoin() external view returns (address);
+    function sellGem(address, uint256) external;
 }
 
 interface TokenLike {
@@ -44,7 +49,13 @@ interface LpTokenLike is TokenLike {
     function token1() external view returns (TokenLike);
 }
 
+interface VaultLike is TokenLike
+{
+	function withdraw(uint256, uint256, bool) external;
+}
+
 interface UniswapV2Router02Like {
+    function factory() external pure returns (UniswapV2FactoryLike);
     function swapExactTokensForTokens(uint256, uint256, address[] calldata, address, uint256) external returns (uint[] memory);
     function removeLiquidity(
         address tokenA,
@@ -57,8 +68,13 @@ interface UniswapV2Router02Like {
     ) external returns (uint amountA, uint amountB);
 }
 
+interface UniswapV2FactoryLike {
+    function getPair(address, address) external view returns (LpTokenLike);
+}
+
 // This Callee contract exists as a standalone contract
 contract UniswapV2Callee {
+    DssPsmLike              public dssPsm;
     UniswapV2Router02Like   public uniRouter02;
     DaiJoinLike             public daiJoin;
     TokenLike               public dai;
@@ -75,7 +91,8 @@ contract UniswapV2Callee {
         z = add(x, sub(y, 1)) / y;
     }
 
-    function setUp(address uniRouter02_, address daiJoin_) internal {
+    function setUp(address dssPsm_, address uniRouter02_, address daiJoin_) internal {
+        dssPsm = DssPsmLike(dssPsm_);
         uniRouter02 = UniswapV2Router02Like(uniRouter02_);
         daiJoin = DaiJoinLike(daiJoin_);
         dai = daiJoin.dai();
@@ -90,8 +107,8 @@ contract UniswapV2Callee {
 
 // Uniswapv2Router02 route directs swaps from one pool to another
 contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
-    constructor(address uniRouter02_, address daiJoin_) public {
-        setUp(uniRouter02_, daiJoin_);
+    constructor(address dssPsm_, address uniRouter02_, address daiJoin_) public {
+        setUp(dssPsm_, uniRouter02_, daiJoin_);
     }
 
     function swapGemForDai(
@@ -99,18 +116,24 @@ contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
         address[] memory path,
         address to
     ) internal {
-        uint256 amountIn = token.balanceOf(address(this));
-        token.approve(address(uniRouter02), amountIn);
-        uniRouter02.swapExactTokensForTokens(
-            amountIn,
-            0, // amountOutMin is zero because minProfit is checked at the end
-            path,
-            address(this),
-            block.timestamp
-        );
-        if (token.balanceOf(address(this)) > 0) {
-            token.transfer(to, token.balanceOf(address(this)));
+        if (path.length > 1) {
+            uint256 amountIn = token.balanceOf(address(this));
+            token.approve(address(uniRouter02), amountIn);
+            uniRouter02.swapExactTokensForTokens(
+                amountIn,
+                0, // amountOutMin is zero because minProfit is checked at the end
+                path,
+                address(this),
+                block.timestamp
+            );
+            if (token.balanceOf(address(this)) > 0) {
+                token.transfer(to, token.balanceOf(address(this)));
+            }
         }
+        TokenLike busd = TokenLike(path[path.length - 1]);
+        uint256 amountOut = busd.balanceOf(address(this));
+        busd.approve(dssPsm.gemJoin(), amountOut);
+        dssPsm.sellGem(address(this), amountOut);
     }
 
     function clipperCall(
@@ -133,8 +156,18 @@ contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
         // Exit collateral to token version
         GemJoinLike(gemJoin).exit(address(this), gemAmt);
 
+        {
+            VaultLike vault = GemJoinLike(gemJoin).gem();
+            vault.withdraw(gemAmt, 1, true);
+        }
+
         // Approve uniRouter02 to take gem
-        LpTokenLike gem = GemJoinLike(gemJoin).gem();
+        LpTokenLike gem;
+        {
+            UniswapV2FactoryLike uniFactory = uniRouter02.factory();
+            gem = uniFactory.getPair(pathA[0], pathB[0]);
+        }
+        gemAmt = gem.balanceOf(address(this));
         gem.approve(address(uniRouter02), gemAmt);
 
         // Calculate amount of DAI to Join (as erc20 WAD value)

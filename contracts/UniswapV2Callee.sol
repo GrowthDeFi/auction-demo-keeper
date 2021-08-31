@@ -23,7 +23,7 @@ interface VatLike {
 
 interface GemJoinLike {
     function dec() external view returns (uint256);
-    function gem() external view returns (TokenLike);
+    function gem() external view returns (VaultLike);
     function exit(address, uint256) external;
 }
 
@@ -33,10 +33,20 @@ interface DaiJoinLike {
     function join(address, uint256) external;
 }
 
+interface DssPsmLike {
+    function gemJoin() external view returns (address);
+    function sellGem(address, uint256) external;
+}
+
 interface TokenLike {
     function approve(address, uint256) external;
     function transfer(address, uint256) external;
     function balanceOf(address) external view returns (uint256);
+}
+
+interface VaultLike is TokenLike
+{
+	function withdraw(uint256, uint256, bool) external;
 }
 
 interface UniswapV2Router02Like {
@@ -46,6 +56,7 @@ interface UniswapV2Router02Like {
 // Simple Callee Example to interact with MatchingMarket
 // This Callee contract exists as a standalone contract
 contract UniswapV2Callee {
+    DssPsmLike              public dssPsm;
     UniswapV2Router02Like   public uniRouter02;
     DaiJoinLike             public daiJoin;
     TokenLike               public dai;
@@ -62,7 +73,8 @@ contract UniswapV2Callee {
         z = add(x, sub(y, 1)) / y;
     }
 
-    function setUp(address uniRouter02_, address daiJoin_) internal {
+    function setUp(address dssPsm_, address uniRouter02_, address daiJoin_) internal {
+        dssPsm = DssPsmLike(dssPsm_);
         uniRouter02 = UniswapV2Router02Like(uniRouter02_);
         daiJoin = DaiJoinLike(daiJoin_);
         dai = daiJoin.dai();
@@ -77,8 +89,8 @@ contract UniswapV2Callee {
 
 // Uniswapv2Router02 route directs swaps from one pool to another
 contract UniswapV2CalleeDai is UniswapV2Callee {
-    constructor(address uniRouter02_, address daiJoin_) public {
-        setUp(uniRouter02_, daiJoin_);
+    constructor(address dssPsm_, address uniRouter02_, address daiJoin_) public {
+        setUp(dssPsm_, uniRouter02_, daiJoin_);
     }
 
     function clipperCall(
@@ -100,8 +112,12 @@ contract UniswapV2CalleeDai is UniswapV2Callee {
         // Exit collateral to token version
         GemJoinLike(gemJoin).exit(address(this), gemAmt);
 
+        VaultLike vault = GemJoinLike(gemJoin).gem();
+        vault.withdraw(gemAmt, 1, true);
+
         // Approve uniRouter02 to take gem
-        TokenLike gem = GemJoinLike(gemJoin).gem();
+        TokenLike gem = TokenLike(path[0]);
+        gemAmt = gem.balanceOf(address(this));
         gem.approve(address(uniRouter02), gemAmt);
 
         // Calculate amount of DAI to Join (as erc20 WAD value)
@@ -110,7 +126,7 @@ contract UniswapV2CalleeDai is UniswapV2Callee {
         // Do operation and get dai amount bought (checking the profit is achieved)
         uniRouter02.swapExactTokensForTokens(
             gemAmt,
-            add(daiToJoin, minProfit),
+            0,
             path,
             address(this),
             block.timestamp
@@ -121,6 +137,16 @@ contract UniswapV2CalleeDai is UniswapV2Callee {
         if (gem.balanceOf(address(this)) > 0) {
             gem.transfer(to, gem.balanceOf(address(this)));
         }
+
+        TokenLike busd = TokenLike(path[path.length - 1]);
+        uint256 amountOut = busd.balanceOf(address(this));
+        busd.approve(dssPsm.gemJoin(), amountOut);
+        dssPsm.sellGem(address(this), amountOut);
+
+        require(
+            dai.balanceOf(address(this)) >= add(daiToJoin, minProfit),
+            "UniswapV2Callee/insufficient-profit"
+        );
 
         // Convert DAI bought to internal vat value of the msg.sender of Clipper.take
         daiJoin.join(sender, daiToJoin);
