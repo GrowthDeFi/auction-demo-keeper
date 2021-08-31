@@ -2,8 +2,6 @@
   "rpcURL": "https://bsc-dataseed.binance.org/",
   "dai": "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3",
   "daiJoin": "0x9438760f1ac27F7cFE638D686d889C56eb42F4D0",
-  "MakerOTCSupportMethods": "0x0000000000000000000000000000000000000000",
-  "OasisDex": "0x0000000000000000000000000000000000000000",
   "UniswapV2Router": "0xcF0feBd3f17CEf5b47b0cD257aCf6025c5BFf3b7",
   "vat": "0x713C28b2Ef6F89750BDf97f7Bbf307f6F949b3fF",
   "eth": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
@@ -14,7 +12,7 @@
       "erc20addr": "0x13e7A6691FE00DE975CF27868386f4aE9aed3cdC",
       "joinAdapter": "0x3728Bd61F582dA0b22cFe7EDC59aC33f7402c4e0",
       "clipper": "0xFFAee04Db99530DeCAe1133DbEc5fD7Cc3BcC4aD",
-      "uniswapCallee": "0x0000000000000000000000000000000000000000",
+      "uniswapCallee": "0xD7eD41a415168e5E1ee2ecdae7AC2dB92737520D",
       "uniswapRoute": [
         "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95",
         "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
@@ -41,7 +39,7 @@
       "erc20addr": "0xC2E8C3c427E0a5BaaF512A013516aECB65Bd75CB",
       "joinAdapter": "0xF755dA11576A9C3355a854F79e4F80E00e251358",
       "clipper": "0xa4f9600534190d96bc60D33A3594E0b0869cAdaB",
-      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+      "uniswapLPCallee": "0x7ea23B510328d40DDdfdfb429434c95D2f49c3B0"
     }
   },
   "txnReplaceTimeout": "60",
