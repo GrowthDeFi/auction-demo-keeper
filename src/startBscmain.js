@@ -1,7 +1,7 @@
 import Keeper from './keeper.js';
 import path from 'path';
 
-const configPath = path.join(path.resolve(), 'config/bscmain-pcs.json');
+const configPath = path.join(path.resolve(), 'config/bscmain.json');
 const passwordPath = path.join(path.resolve(), '/wallet/password.txt');
 const keystorePath = path.join(path.resolve(), '/wallet/keystore.json');
 

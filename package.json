@@ -5,8 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "bscmain-ape": "node --experimental-json-modules src/startBscmainApe.js",
-    "bscmain-pcs": "node --experimental-json-modules src/startBscmainPcs.js",
+    "bscmain": "node --experimental-json-modules src/startBscmain.js",
     "kovan": "node --experimental-json-modules src/startKovan.js",
     "mainnet": "node --experimental-json-modules src/startMainnet.js",
     "env": "node --experimental-json-modules src/startEnv.js",
