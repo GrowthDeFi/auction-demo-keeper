@@ -39,6 +39,7 @@ export default class UniswapAdaptor {
   // ilkAmount in WEI
   fetch = async (_ilkAmount) => {
     let ilkAmount = BigNumber.from(_ilkAmount).div(this._decNormalized);
+    // TODO update ilkAmount to reflect vault rate
     let book = {
       sellAmount: '',
       receiveAmount: ''
@@ -47,8 +48,11 @@ export default class UniswapAdaptor {
       const blockNumber = await this._provider.getBlockNumber();
 
       if (typeof(Config.vars.collateral[this._collateralName].token0) !== 'undefined') {
+        const erc20addr =
+          Config.vars.collateral[this._collateralName].erc20addrReserve ||
+          Config.vars.collateral[this._collateralName].erc20addr;
         const token = new ethers.Contract(
-          Config.vars.collateral[this._collateralName].erc20addr,
+          erc20addr,
           UniswapV2Pair,
           this._provider
         );

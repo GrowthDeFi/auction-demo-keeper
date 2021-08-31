@@ -10,6 +10,7 @@
       "name": "STKCAKE-A",
       "decimals": 18,
       "erc20addr": "0xB50Acf6195F97177D33D132A3E5617b934C351d3",
+      "erc20addrReserve": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
       "joinAdapter": "0xf72f07b96D4Ee64d1065951cAfac032B63C767bb",
       "clipper": "0x61C8CF1e4E1DBdF88fceDd55e2956345b4df6B21",
       "uniswapCallee": "0x85211AB58Ff5DeA9dae3980d8f5c0780814EA484",
@@ -22,6 +23,7 @@
       "name": "STKBANANA-A",
       "decimals": 18,
       "erc20addr": "0x13e7A6691FE00DE975CF27868386f4aE9aed3cdC",
+      "erc20addrReserve": "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95",
       "joinAdapter": "0x3728Bd61F582dA0b22cFe7EDC59aC33f7402c4e0",
       "clipper": "0xFFAee04Db99530DeCAe1133DbEc5fD7Cc3BcC4aD",
       "uniswapCallee": "0xD7eD41a415168e5E1ee2ecdae7AC2dB92737520D",
@@ -50,6 +52,7 @@
         ]
       },
       "erc20addr": "0xd8C76eF0de11f9cc9708EB966A87e25a7E6C7949",
+      "erc20addrReserve": "0x0eD7e52944161450477ee417DE9Cd3a859b14fD0",
       "joinAdapter": "0x9605863bf02E983861C0a4ac28a7527Fcf36732b",
       "clipper": "0x62711202EF9368e5401eCeaFD90E71A411286Edd",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -73,6 +76,7 @@
         ]
       },
       "erc20addr": "0x0170D4C58AD9A9D8ab031c0270353d7034B87f6F",
+      "erc20addrReserve": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16",
       "joinAdapter": "0x842B07b7D9C77A6bE833a660FB628C6d28Bda0a8",
       "clipper": "0x0c6eEaE3a36ec66B30A58917166D526f499e431B",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -98,6 +102,7 @@
         ]
       },
       "erc20addr": "0xE487a3780D56F2ECD142201907dF16350bb09946",
+      "erc20addrReserve": "0x74E4716E431f45807DCF19f284c7aA99F18a4fbc",
       "joinAdapter": "0x65764167EC4B38D611F961515B51a40628614018",
       "clipper": "0x6f77799B3D36a61FdF8eb82E0DdEDcF4BA041042",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -122,6 +127,7 @@
         ]
       },
       "erc20addr": "0x9Df7B409925cc93dE1BB4ADDfA9Aed2bcE913F08",
+      "erc20addrReserve": "0x61EB789d75A95CAa3fF50ed7E47b96c132fEc082",
       "joinAdapter": "0x7ae7E7D2efCBB0289E451Fc167DF91b996390d7C",
       "clipper": "0x940aA35E47d54a5EE4dc3C6Ff6Eb1bdec065c2A5",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -145,6 +151,7 @@
         ]
       },
       "erc20addr": "0x60CD286AF05A3e096C8Ace193950CffA5E8e3CE0",
+      "erc20addrReserve": "0x2354ef4DF11afacb85a5C7f98B624072ECcddbB1",
       "joinAdapter": "0xd312EC88F0CE9512804db1e08b1EB6901c278d0f",
       "clipper": "0x8641BdBECE44c3f05b1991922f721C4585f22456",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -168,6 +175,7 @@
         ]
       },
       "erc20addr": "0x26E0701F5881161043d56eb3Ddfde0b8c6772060",
+      "erc20addrReserve": "0xF45cd219aEF8618A92BAa7aD848364a158a24F33",
       "joinAdapter": "0x6ADeB113EbD9a6a9B7CaB380Ba0A204DC08456b5",
       "clipper": "0x226d0e1AC4C8b6253caf5CEda067fb5a6EDCDF6F",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -191,6 +199,7 @@
         ]
       },
       "erc20addr": "0xFA6388B7980126C2d7d0c5FC02949a2fF40F95DE",
+      "erc20addrReserve": "0x804678fa97d91B974ec2af3c843270886528a9E6",
       "joinAdapter": "0x77a5E69955E1837B0c3f50159577ccb7468d6a4d",
       "clipper": "0x435D4017b6A4C21f25077ccd5849F083F3e20452",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -216,6 +225,7 @@
         ]
       },
       "erc20addr": "0x9FDD69a473d2216c5D232510DDF2328272bC6847",
+      "erc20addrReserve": "0xD171B26E4484402de70e3Ea256bE5A2630d7e88D",
       "joinAdapter": "0x781E44923fb912b1d0aa892BBf62dD1b4dfC9cd5",
       "clipper": "0x754e4D6fbbDdE2e77c390E4BAC54C7e0E48901Ab",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -241,6 +251,7 @@
         ]
       },
       "erc20addr": "0xcAD2E1b2257795f0D580d49520741E93654fAaB5",
+      "erc20addrReserve": "0xEa26B78255Df2bBC31C1eBf60010D78670185bD0",
       "joinAdapter": "0x754B2f8704A3D453151eE69875ECde4C610F2BEa",
       "clipper": "0xbCa0650FF329211D3784C82196421A885FDB0451",
       "uniswapLPCallee": "0x1991f21af4498C5E89Cc2a29FB8459470B8E14C9"
@@ -264,6 +275,7 @@
         ]
       },
       "erc20addr": "0xC2E8C3c427E0a5BaaF512A013516aECB65Bd75CB",
+      "erc20addrReserve": "0x33526eD690200663EAAbF28e1D8621e58898c5fd",
       "joinAdapter": "0xF755dA11576A9C3355a854F79e4F80E00e251358",
       "clipper": "0xa4f9600534190d96bc60D33A3594E0b0869cAdaB",
       "uniswapLPCallee": "0x7ea23B510328d40DDdfdfb429434c95D2f49c3B0"
