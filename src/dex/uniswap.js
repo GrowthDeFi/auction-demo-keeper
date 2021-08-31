@@ -4,6 +4,7 @@ import { ethers, BigNumber } from 'ethers';
 import uniswapRouter from '../../abi/UniswapV2Router02.json';
 import uniswapCalleeAbi from '../../abi/UniswapV2CalleeDai.json';
 import UniswapV2Pair from '../../abi/UniswapV2Pair.json';
+import CompoundingStrategyToken from '../../abi/CompoundingStrategyToken.json';
 
 const decimals18 = ethers.utils.parseEther('1');
 
@@ -39,7 +40,14 @@ export default class UniswapAdaptor {
   // ilkAmount in WEI
   fetch = async (_ilkAmount) => {
     let ilkAmount = BigNumber.from(_ilkAmount).div(this._decNormalized);
-    // TODO update ilkAmount to reflect vault rate
+    if (Config.vars.collateral[this._collateralName].erc20addrReserve) {
+        const vault = new ethers.Contract(
+          Config.vars.collateral[this._collateralName].erc20addr,
+          CompoundingStrategyToken,
+          this._provider
+        );
+        ilkAmount = await vault.calcAmountFromShares(ilkAmount);
+    }
     let book = {
       sellAmount: '',
       receiveAmount: ''
