@@ -9,6 +9,9 @@ import UniswapAdaptor from './dex/uniswap.js';
 import Wallet from './wallet.js';
 import { clipperAllowance, checkVatBalance, daiJoinAllowance } from './vat.js';
 import fs from 'fs';
+import dog from '../abi/dog.json';
+import DssCdpManager from '../abi/DssCdpManager.json';
+import { Transact, GeometricGasPrice } from './transact.js';
 
 /* The Keeper module is the entry point for the
  ** auction Demo Keeper
@@ -274,6 +277,46 @@ export default class keeper {
           this._clippers.push(pair);
           console.log(`\n------------------ COLLATERAL ${collateral.name} INITIALIZED ------------------\n`);
         });
+      }
+    }
+    {
+      if (Config.vars.dog === undefined || Config.vars.cdpManager === undefined) return;
+      console.log('Starting barker...');
+      const barker = new ethers.Contract(
+        Config.vars.dog,
+        dog,
+        network.provider
+      );
+      const manager = new ethers.Contract(
+        Config.vars.cdpManager,
+        DssCdpManager,
+        network.provider
+      );
+      while (true) {
+        const cdpi = Number(await manager.cdpi());
+        for (let i = 1; i <= cdpi; i++) {
+          const ilk = await manager.ilks(i);
+          const urn = await manager.urns(i);
+
+          const initial_price = await this._wallet.getGasPrice();
+          const gasStrategy = new GeometricGasPrice(initial_price.add(BigNumber.from(Config.vars.initialGasOffsetGwei ?? 0).mul(1e9)).toNumber(), Config.vars.txnReplaceTimeout, Config.vars.dynamicGasCoefficient);
+          let bark_transaction;
+          try {
+            bark_transaction = await barker.populateTransaction.bark(ilk, urn, this._wallet.address);
+          } catch (error) {
+            console.log(error.message);
+          }
+          console.log(`\nAttempting to bark at cdp ${i}`);
+          try {
+            const txn = new Transact(bark_transaction, this._wallet, Config.vars.txnReplaceTimeout, gasStrategy);
+            const response = await txn.transact_async();
+            if (response.hash != undefined) {
+              console.log(`Cdp ${i} Bark Tx Hash ${response.hash}`);
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        }
       }
     }
   }
