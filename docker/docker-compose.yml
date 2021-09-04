@@ -1,0 +1,13 @@
+version: '2.2'
+
+x-liquidationbot: &liquidationbot
+  image: node:14-alpine
+  working_dir: /repo/
+  command: yarn run bscmain
+  volumes: [ "../:/repo/" ]
+  restart: always
+
+services:
+  liquidationbot:
+    <<: *liquidationbot
+    container_name: liquidationbot
