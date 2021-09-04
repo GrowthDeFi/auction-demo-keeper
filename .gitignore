@@ -7,3 +7,4 @@ yarn.lock
 /wallet
 !/wallet/jsonpassword.txt
 !/wallet/testwallet.json
+.env
