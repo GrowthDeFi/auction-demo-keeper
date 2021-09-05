@@ -92,13 +92,13 @@ export default class UniswapAdaptor {
         let offer0 = [ilkAmount0];
         let offer1 = [ilkAmount1];
 
-        if (Config.vars.collateral[this._collateralName].token0.name !== 'DAI') {
+        if (Config.vars.collateral[this._collateralName].token0.name !== 'MOR') {
           offer0 = await this._uniswap.getAmountsOut(
             ilkAmount0,
             Config.vars.collateral[this._collateralName].token0.route
           );
         }
-        if (Config.vars.collateral[this._collateralName].token1.name !== 'DAI') {
+        if (Config.vars.collateral[this._collateralName].token1.name !== 'MOR') {
           offer1 = await this._uniswap.getAmountsOut(
             ilkAmount1,
             Config.vars.collateral[this._collateralName].token1.route
