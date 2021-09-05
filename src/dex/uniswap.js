@@ -101,7 +101,7 @@ export default class UniswapAdaptor {
             Config.vars.collateral[this._collateralName].token0.route
           );
         }
-        if (Config.vars.collateral[this._collateralName].token1.name !== 'MOR' && Config.vars.collateral[this._collateralName].token0.route.length > 1) {
+        if (Config.vars.collateral[this._collateralName].token1.name !== 'MOR' && Config.vars.collateral[this._collateralName].token1.route.length > 1) {
           offer1 = await _uniswap.getAmountsOut(
             ilkAmount1,
             Config.vars.collateral[this._collateralName].token1.route
