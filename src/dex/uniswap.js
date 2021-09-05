@@ -32,13 +32,16 @@ export default class UniswapAdaptor {
     this._callee = new ethers.Contract(
       callee, uniswapCalleeAbi, this._provider
     );
-    this._uniswap = new ethers.Contract(
-      Config.vars.UniswapV2Router, uniswapRouter, this._provider
-    );
   }
 
   // ilkAmount in WEI
   fetch = async (_ilkAmount) => {
+    const _uniswap = new ethers.Contract(
+      Config.vars.collateral[this._collateralName].UniswapV2Router ||
+      Config.vars.UniswapV2Router,
+      uniswapRouter,
+      this._provider
+    );
     let ilkAmount = BigNumber.from(_ilkAmount).div(this._decNormalized);
     if (Config.vars.collateral[this._collateralName].erc20addrReserve) {
         const vault = new ethers.Contract(
@@ -93,13 +96,13 @@ export default class UniswapAdaptor {
         let offer1 = [ilkAmount1];
 
         if (Config.vars.collateral[this._collateralName].token0.name !== 'MOR' && Config.vars.collateral[this._collateralName].token0.route.length > 1) {
-          offer0 = await this._uniswap.getAmountsOut(
+          offer0 = await _uniswap.getAmountsOut(
             ilkAmount0,
             Config.vars.collateral[this._collateralName].token0.route
           );
         }
         if (Config.vars.collateral[this._collateralName].token1.name !== 'MOR' && Config.vars.collateral[this._collateralName].token0.route.length > 1) {
-          offer1 = await this._uniswap.getAmountsOut(
+          offer1 = await _uniswap.getAmountsOut(
             ilkAmount1,
             Config.vars.collateral[this._collateralName].token1.route
           );
@@ -112,7 +115,7 @@ export default class UniswapAdaptor {
           offer0[offer0.length - 1].add(offer1[offer1.length - 1])
         );
       } else {
-        const offer = await this._uniswap.getAmountsOut(
+        const offer = await _uniswap.getAmountsOut(
           ilkAmount, Config.vars.collateral[this._collateralName].uniswapRoute
         );
         book.sellAmount = ethers.utils.formatUnits(

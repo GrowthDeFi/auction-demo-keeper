@@ -28,6 +28,7 @@
       "erc20addrReserve": "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95",
       "joinAdapter": "0x3728Bd61F582dA0b22cFe7EDC59aC33f7402c4e0",
       "clipper": "0xFFAee04Db99530DeCAe1133DbEc5fD7Cc3BcC4aD",
+      "UniswapV2Router": "0xcF0feBd3f17CEf5b47b0cD257aCf6025c5BFf3b7",
       "uniswapCallee": "0xD7eD41a415168e5E1ee2ecdae7AC2dB92737520D",
       "uniswapRoute": [
         "0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95",
@@ -280,6 +281,7 @@
       "erc20addrReserve": "0x33526eD690200663EAAbF28e1D8621e58898c5fd",
       "joinAdapter": "0xF755dA11576A9C3355a854F79e4F80E00e251358",
       "clipper": "0xa4f9600534190d96bc60D33A3594E0b0869cAdaB",
+      "UniswapV2Router": "0xcF0feBd3f17CEf5b47b0cD257aCf6025c5BFf3b7",
       "uniswapLPCallee": "0x7ea23B510328d40DDdfdfb429434c95D2f49c3B0"
     }
   },
