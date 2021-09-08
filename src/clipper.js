@@ -198,7 +198,7 @@ export default class Clipper {
           const accountUrl = ADDRESS_URL_PREFIX[network] + account;
           const txUrl = TX_URL_PREFIX[network] + tx;
           const txPrefix = tx.substr(0, 6);
-          const value = await ethers.getDefaultProvider().getBalance(account);
+          const value = await network.provider.getBalance(account);
           const balance = Number(ethers.utils.formatEther(value)).toFixed(4);
           const lines = [];
           lines.push('<a href="' + accountUrl + '">LiquidationBot</a>');
@@ -253,7 +253,7 @@ export default class Clipper {
             const accountUrl = ADDRESS_URL_PREFIX[network] + account;
             const txUrl = TX_URL_PREFIX[network] + tx;
             const txPrefix = tx.substr(0, 6);
-            const value = await ethers.getDefaultProvider().getBalance(account);
+            const value = await network.provider.getBalance(account);
             const balance = Number(ethers.utils.formatEther(value)).toFixed(4);
             const lines = [];
             lines.push('<a href="' + accountUrl + '">LiquidationBot</a>');
