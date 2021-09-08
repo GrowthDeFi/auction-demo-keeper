@@ -180,7 +180,7 @@ export default class Clipper {
         console.log(`Auction ${auctionId} Take Tx Hash ${response.hash}`);
         { // telegram
           const network = 'bscmain';
-          const name = 'auction #' + auctionId ' of ' + this._collateralName;
+          const name = 'auction #' + auctionId + ' of ' + this._collateralName;
           const type = 'clip';
           const address = this._clipperAddr;
           const account = _signer.address;
@@ -235,7 +235,7 @@ export default class Clipper {
           console.log(`Redone auction ${auctionId} Tx hash: ${response.hash}`);
           { // telegram
             const network = 'bscmain';
-            const name = 'auction #' + auctionId ' of ' + this._collateralName;
+            const name = 'auction #' + auctionId + ' of ' + this._collateralName;
             const type = 'clip';
             const address = this._clipperAddr;
             const account = _signer.address;
