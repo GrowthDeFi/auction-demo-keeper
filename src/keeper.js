@@ -336,6 +336,7 @@ export default class keeper {
               const response = await txn.transact_async();
               if (response.hash != undefined) {
                 console.log(`Cdp ${i} Bark Tx Hash ${response.hash}`);
+                const provider = network.provider;
                 { // telegram
                   const network = 'bscmain';
                   const name = 'cdp #' + i;
@@ -356,7 +357,7 @@ export default class keeper {
                   const accountUrl = ADDRESS_URL_PREFIX[network] + account;
                   const txUrl = TX_URL_PREFIX[network] + tx;
                   const txPrefix = tx.substr(0, 6);
-                  const value = await network.provider.getBalance(account);
+                  const value = await provider.getBalance(account);
                   const balance = Number(ethers.utils.formatEther(value)).toFixed(4);
                   const lines = [];
                   lines.push('<a href="' + accountUrl + '">LiquidationBot</a>');

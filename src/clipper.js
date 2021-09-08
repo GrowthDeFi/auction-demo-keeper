@@ -178,6 +178,7 @@ export default class Clipper {
       const response = await txn.transact_async();
       if (response != undefined) {
         console.log(`Auction ${auctionId} Take Tx Hash ${response.hash}`);
+        const provider = network.provider;
         { // telegram
           const network = 'bscmain';
           const name = 'auction #' + auctionId + ' of ' + this._collateralName;
@@ -198,7 +199,7 @@ export default class Clipper {
           const accountUrl = ADDRESS_URL_PREFIX[network] + account;
           const txUrl = TX_URL_PREFIX[network] + tx;
           const txPrefix = tx.substr(0, 6);
-          const value = await network.provider.getBalance(account);
+          const value = await provider.getBalance(account);
           const balance = Number(ethers.utils.formatEther(value)).toFixed(4);
           const lines = [];
           lines.push('<a href="' + accountUrl + '">LiquidationBot</a>');
@@ -233,6 +234,7 @@ export default class Clipper {
         const response = await txn.transact_async();
         if (response != undefined) {
           console.log(`Redone auction ${auctionId} Tx hash: ${response.hash}`);
+          const provider = network.provider;
           { // telegram
             const network = 'bscmain';
             const name = 'auction #' + auctionId + ' of ' + this._collateralName;
@@ -253,7 +255,7 @@ export default class Clipper {
             const accountUrl = ADDRESS_URL_PREFIX[network] + account;
             const txUrl = TX_URL_PREFIX[network] + tx;
             const txPrefix = tx.substr(0, 6);
-            const value = await network.provider.getBalance(account);
+            const value = await provider.getBalance(account);
             const balance = Number(ethers.utils.formatEther(value)).toFixed(4);
             const lines = [];
             lines.push('<a href="' + accountUrl + '">LiquidationBot</a>');
