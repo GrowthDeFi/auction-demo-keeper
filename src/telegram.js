@@ -1,5 +1,6 @@
-require('dotenv').config();
-const axios = require('axios');
+import dotenv from 'dotenv';
+import axios from 'axios';
+dotenv.config();
 
 export function escapeHTML(message) {
   return message
