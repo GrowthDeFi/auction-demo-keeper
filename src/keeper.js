@@ -12,6 +12,7 @@ import fs from 'fs';
 import dog from '../abi/dog.json';
 import DssCdpManager from '../abi/DssCdpManager.json';
 import { Transact, GeometricGasPrice } from './transact.js';
+import { sendTelegramMessage, escapeHTML } from './telegram.js';
 
 /* The Keeper module is the entry point for the
  ** auction Demo Keeper
@@ -313,8 +314,43 @@ export default class keeper {
               const response = await txn.transact_async();
               if (response.hash != undefined) {
                 console.log(`Cdp ${i} Bark Tx Hash ${response.hash}`);
+                { // telegram
+                  const network = 'bscmain';
+                  const name = 'cdp #' + i;
+                  const type = 'dog';
+                  const address = Config.vars.dog;
+                  const account = this._wallet.address;
+                  const tx = response.hash;
+                  const ADDRESS_URL_PREFIX = {
+                    'bscmain': 'https://bscscan.com/address/',
+                  };
+                  const TX_URL_PREFIX = {
+                    'bscmain': 'https://bscscan.com/tx/',
+                  };
+                  const NATIVE_SYMBOL = {
+                    'bscmain': 'BNB',
+                  };
+                  const url = ADDRESS_URL_PREFIX[network] + address;
+                  const accountUrl = ADDRESS_URL_PREFIX[network] + account;
+                  const txUrl = TX_URL_PREFIX[network] + tx;
+                  const txPrefix = tx.substr(0, 6);
+                  const value = await ethers.getDefaultProvider().getBalance(account);
+                  const balance = Number(ethers.utils.formatEther(value)).toFixed(4);
+                  const lines = [];
+                  lines.push('<a href="' + accountUrl + '">LiquidationBot</a>');
+                  lines.push('<code>' + balance + ' ' + NATIVE_SYMBOL[network] + '</code>');
+                  lines.push('<a href="' + url + '">' + type + '</a>.bark() at <a href="' + txUrl + '">' + txPrefix + '</a> for ' + name);
+                  await sendTelegramMessage(lines.join('\n'));
+                }
               }
             } catch (error) {
+              { // telegram
+                const message = error instanceof Error ? error.message : String(error);
+                const network = 'bscmain';
+                const lines = [];
+                lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
+                await sendTelegramMessage(lines.join('\n'));
+              }
               console.error(error);
             }
           }
