@@ -264,7 +264,6 @@ export default class keeper {
         process.on('uncaughtException', f);
         process.on('unhandledRejection', f);
       }
-
       const network = 'bscmain';
       await sendTelegramMessage('<i>LiquidationBot (' + network + ') Initiated</i>');
       let interrupted = false;
@@ -273,7 +272,7 @@ export default class keeper {
           interrupted = true;
           console.error('error', e, e instanceof Error ? e.stack : undefined);
           const message = e instanceof Error ? e.message : String(e);
-          await sendTelegramMessage('<i>PokeBot (' + network + ') Interrupted (' + escapeHTML(message) + ')</i>');
+          await sendTelegramMessage('<i>LiquidationBot (' + network + ') Interrupted (' + escapeHTML(message) + ')</i>');
           process.exit(0);
         }
       });

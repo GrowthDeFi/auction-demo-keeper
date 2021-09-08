@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
 import axios from 'axios';
+import dotenv from 'dotenv';
 dotenv.config();
 
 export function escapeHTML(message) {
