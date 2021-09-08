@@ -255,6 +255,29 @@ export default class keeper {
   }
 
   async run() {
+    { // telegram
+      function interrupt(f) {
+        process.on('SIGINT', f);
+        process.on('SIGTERM', f);
+        process.on('SIGUSR1', f);
+        process.on('SIGUSR2', f);
+        process.on('uncaughtException', f);
+        process.on('unhandledRejection', f);
+      }
+
+      const network = 'bscmain';
+      await sendTelegramMessage('<i>LiquidationBot (' + network + ') Initiated</i>');
+      let interrupted = false;
+      interrupt(async (e) => {
+        if (!interrupted) {
+          interrupted = true;
+          console.error('error', e, e instanceof Error ? e.stack : undefined);
+          const message = e instanceof Error ? e.message : String(e);
+          await sendTelegramMessage('<i>PokeBot (' + network + ') Interrupted (' + escapeHTML(message) + ')</i>');
+          process.exit(0);
+        }
+      });
+    }
     this._wallet = await setupWallet(network, this.walletPasswordPath, this.walletKeystorePath);
     for (const name in Config.vars.collateral) {
       if (Object.prototype.hasOwnProperty.call(Config.vars.collateral, name)) {
