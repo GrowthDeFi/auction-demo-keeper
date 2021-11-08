@@ -46,7 +46,7 @@ interface TokenLike {
 
 interface VaultLike is TokenLike
 {
-	function withdraw(uint256, uint256, bool) external;
+    function withdraw(uint256, uint256, bool) external;
 }
 
 interface UniswapV2Router02Like {
