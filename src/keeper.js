@@ -303,6 +303,9 @@ export default class keeper {
       }
     }
     {
+      // taker parameters
+      // minimum amount 1000 MOR
+      // receiver 0x80F2dCC36D9548F97A14a3bF73D992FB614e45f4
       if (Config.vars.dog === undefined || Config.vars.cdpManager === undefined) return;
       console.log('Starting barker...');
       const barker = new ethers.Contract(
