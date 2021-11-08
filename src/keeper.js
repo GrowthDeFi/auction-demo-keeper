@@ -349,12 +349,15 @@ export default class keeper {
                   const tx = response.hash;
                   const ADDRESS_URL_PREFIX = {
                     'bscmain': 'https://bscscan.com/address/',
+                    'avaxmain': 'https://snowtrace.io/address/',
                   };
                   const TX_URL_PREFIX = {
                     'bscmain': 'https://bscscan.com/tx/',
+                    'avaxmain': 'https://snowtrace.io/tx/',
                   };
                   const NATIVE_SYMBOL = {
                     'bscmain': 'BNB',
+                    'avaxmain': 'AVAX',
                   };
                   const url = ADDRESS_URL_PREFIX[network] + address;
                   const accountUrl = ADDRESS_URL_PREFIX[network] + account;
