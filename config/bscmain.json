@@ -1,4 +1,5 @@
 {
+  "network": "bscmain",
   "rpcURL": "https://bsc-dataseed.binance.org/",
   "dai": "0x87BAde473ea0513D4aA7085484aEAA6cB6EBE7e3",
   "daiJoin": "0x9438760f1ac27F7cFE638D686d889C56eb42F4D0",

@@ -1,4 +1,5 @@
 {
+  "network": "kovan",
   "rpcURL": "https://kovan.infura.io/v3/11465e3f27b247eb8b785c23047b29fd",
   "dai": "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa",
   "daiJoin": "0x5AA71a3ae1C0bd6ac27A1f28e1415fFFB6F15B8c",

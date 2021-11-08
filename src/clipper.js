@@ -180,7 +180,7 @@ export default class Clipper {
         console.log(`Auction ${auctionId} Take Tx Hash ${response.hash}`);
         const provider = network.provider;
         { // telegram
-          const network = 'bscmain';
+          const network = Config.vars.network;
           const name = 'auction #' + auctionId + ' of ' + this._collateralName;
           const type = 'clip';
           const address = this._clipperAddr;
@@ -216,7 +216,7 @@ export default class Clipper {
       console.error(error);
       { // telegram
         const message = error instanceof Error ? error.message : String(error);
-        const network = 'bscmain';
+        const network = Config.vars.network;
         const lines = [];
         lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
         await sendTelegramMessage(lines.join('\n'));
@@ -239,7 +239,7 @@ export default class Clipper {
           console.log(`Redone auction ${auctionId} Tx hash: ${response.hash}`);
           const provider = network.provider;
           { // telegram
-            const network = 'bscmain';
+            const network = Config.vars.network;
             const name = 'auction #' + auctionId + ' of ' + this._collateralName;
             const type = 'clip';
             const address = this._clipperAddr;
@@ -276,7 +276,7 @@ export default class Clipper {
       console.error(error);
       { // telegram
         const message = error instanceof Error ? error.message : String(error);
-        const network = 'bscmain';
+        const network = Config.vars.network;
         const lines = [];
         lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
         await sendTelegramMessage(lines.join('\n'));

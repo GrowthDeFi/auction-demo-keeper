@@ -264,7 +264,7 @@ export default class keeper {
         process.on('uncaughtException', f);
         process.on('unhandledRejection', f);
       }
-      const network = 'bscmain';
+      const network = Config.vars.network;
       await sendTelegramMessage('<i>LiquidationBot (' + network + ') Initiated</i>');
       let interrupted = false;
       interrupt(async (e) => {
@@ -341,7 +341,7 @@ export default class keeper {
                 console.log(`Cdp ${i} Bark Tx Hash ${response.hash}`);
                 const provider = network.provider;
                 { // telegram
-                  const network = 'bscmain';
+                  const network = Config.vars.network;
                   const name = 'cdp #' + i;
                   const type = 'dog';
                   const address = Config.vars.dog;
@@ -375,7 +375,7 @@ export default class keeper {
             } catch (error) {
               { // telegram
                 const message = error instanceof Error ? error.message : String(error);
-                const network = 'bscmain';
+                const network = Config.vars.network;
                 const lines = [];
                 lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
                 await sendTelegramMessage(lines.join('\n'));
