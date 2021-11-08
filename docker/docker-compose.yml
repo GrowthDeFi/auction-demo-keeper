@@ -3,11 +3,15 @@ version: '2.2'
 x-liquidationbot: &liquidationbot
   image: node:14-alpine
   working_dir: /repo/
-  command: yarn run bscmain
   volumes: [ "../:/repo/" ]
   restart: always
 
 services:
-  liquidationbot:
+  liquidationbot-bscmain:
     <<: *liquidationbot
-    container_name: liquidationbot
+    container_name: liquidationbot-bscmain
+    command: yarn run bscmain
+  liquidationbot-avaxmain:
+    <<: *liquidationbot
+    container_name: liquidationbot-avaxmain
+    command: yarn run avaxmain

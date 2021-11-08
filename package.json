@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "bscmain": "node --experimental-json-modules src/startBscmain.js",
+    "avaxmain": "node --experimental-json-modules src/startAvaxmain.js",
     "kovan": "node --experimental-json-modules src/startKovan.js",
     "mainnet": "node --experimental-json-modules src/startMainnet.js",
     "env": "node --experimental-json-modules src/startEnv.js",
