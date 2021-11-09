@@ -52,6 +52,7 @@ interface LpTokenLike is TokenLike {
 interface VaultLike is TokenLike
 {
     function deposit(uint256) external;
+    function withdraw(uint256, uint256) external;
     function withdraw(uint256, uint256, bool) external;
 }
 
@@ -108,8 +109,13 @@ contract UniswapV2Callee {
 
 // Uniswapv2Router02 route directs swaps from one pool to another
 contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
-    constructor(address dssPsm_, address uniRouter02_, address daiJoin_) public {
+    mapping (VaultLike => VaultLike) public bridges;
+
+    constructor(address dssPsm_, address uniRouter02_, address daiJoin_, VaultLike[] memory vaults_, VaultLike[] memory bridges_) public {
         setUp(dssPsm_, uniRouter02_, daiJoin_);
+        for (uint256 i = 0; i < vaults_.length; i++) {
+            bridges[vaults_[i]] = bridges_[i];
+        }
     }
 
     function swapGemForDai(
@@ -164,7 +170,12 @@ contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
 
         {
             VaultLike vault = GemJoinLike(gemJoin).gem();
-            vault.withdraw(gemAmt, 1, true);
+            VaultLike bridge = bridges[vault];
+            if (bridge != VaultLike(0)) {
+                bridge.withdraw(gemAmt, 1);
+            } else {
+                vault.withdraw(gemAmt, 1, true);
+            }
         }
 
         // Approve uniRouter02 to take gem
