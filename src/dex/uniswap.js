@@ -45,6 +45,7 @@ export default class UniswapAdaptor {
     let ilkAmount = BigNumber.from(_ilkAmount).div(this._decNormalized);
     if (Config.vars.collateral[this._collateralName].erc20addrReserve) {
         const vault = new ethers.Contract(
+          Config.vars.collateral[this._collateralName].erc20addrBridge ||
           Config.vars.collateral[this._collateralName].erc20addr,
           CompoundingStrategyToken,
           this._provider
