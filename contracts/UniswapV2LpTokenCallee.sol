@@ -51,6 +51,7 @@ interface LpTokenLike is TokenLike {
 
 interface VaultLike is TokenLike
 {
+    function deposit(uint256) external;
     function withdraw(uint256, uint256, bool) external;
 }
 
@@ -130,9 +131,14 @@ contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
                 token.transfer(to, token.balanceOf(address(this)));
             }
         }
-        TokenLike busd = TokenLike(path[path.length - 1]);
-        uint256 amountOut = busd.balanceOf(address(this));
-        busd.approve(dssPsm.gemJoin(), amountOut);
+        TokenLike stable = TokenLike(path[path.length - 1]);
+        uint256 amountOut = stable.balanceOf(address(this));
+        TokenLike psmgem = GemJoinLike(dssPsm.gemJoin()).gem();
+        if (stable != psmgem) {
+            stable.approve(address(psmgem), amountOut);
+            VaultLike(address(psmgem)).deposit(amountOut);
+        }
+        psmgem.approve(dssPsm.gemJoin(), amountOut);
         dssPsm.sellGem(address(this), amountOut);
     }
 

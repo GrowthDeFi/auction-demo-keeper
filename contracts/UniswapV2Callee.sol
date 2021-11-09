@@ -46,6 +46,7 @@ interface TokenLike {
 
 interface VaultLike is TokenLike
 {
+    function deposit(uint256) external;
     function withdraw(uint256, uint256, bool) external;
 }
 
@@ -112,8 +113,10 @@ contract UniswapV2CalleeDai is UniswapV2Callee {
         // Exit collateral to token version
         GemJoinLike(gemJoin).exit(address(this), gemAmt);
 
-        VaultLike vault = GemJoinLike(gemJoin).gem();
-        vault.withdraw(gemAmt, 1, true);
+        {
+            VaultLike vault = GemJoinLike(gemJoin).gem();
+            vault.withdraw(gemAmt, 1, true);
+        }
 
         // Approve uniRouter02 to take gem
         TokenLike gem = TokenLike(path[0]);
@@ -138,9 +141,14 @@ contract UniswapV2CalleeDai is UniswapV2Callee {
             gem.transfer(to, gem.balanceOf(address(this)));
         }
 
-        TokenLike busd = TokenLike(path[path.length - 1]);
-        uint256 amountOut = busd.balanceOf(address(this));
-        busd.approve(dssPsm.gemJoin(), amountOut);
+        TokenLike stable = TokenLike(path[path.length - 1]);
+        uint256 amountOut = stable.balanceOf(address(this));
+        TokenLike psmgem = GemJoinLike(dssPsm.gemJoin()).gem();
+        if (stable != psmgem) {
+            stable.approve(address(psmgem), amountOut);
+            VaultLike(address(psmgem)).deposit(amountOut);
+        }
+        psmgem.approve(dssPsm.gemJoin(), amountOut);
         dssPsm.sellGem(address(this), amountOut);
 
         require(
