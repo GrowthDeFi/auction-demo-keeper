@@ -17,7 +17,7 @@
       "erc20addrReserve": "0x57319d41F71E81F3c65F2a47CA4e001EbAFd4F33",
       "joinAdapter": "0x3a6a2d813Bc8C51E72d3348311c62EB2D1D9dEe2",
       "clipper": "0xFFAee04Db99530DeCAe1133DbEc5fD7Cc3BcC4aD",
-      "uniswapCallee": "0xc1d3F1dB60DE17afD7770464BAb05c58129d7Ee0",
+      "uniswapCallee": "0x1f48dCbCE7fC91180492a7b083472924b4e8a44b",
       "uniswapRoute": [
         "0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd",
         "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
@@ -32,7 +32,7 @@
       "erc20addrReserve": "0xC22F01ddc8010Ee05574028528614634684EC29e",
       "joinAdapter": "0x427E2E0a8fFb18E9F2A5a5E72c585353fC89DcE4",
       "clipper": "0x62711202EF9368e5401eCeaFD90E71A411286Edd",
-      "uniswapCallee": "0xc1d3F1dB60DE17afD7770464BAb05c58129d7Ee0",
+      "uniswapCallee": "0x1f48dCbCE7fC91180492a7b083472924b4e8a44b",
       "uniswapRoute": [
         "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
         "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664"
@@ -46,7 +46,7 @@
       "erc20addrReserve": "0x929f5caB61DFEc79a5431a7734a68D714C4633fa",
       "joinAdapter": "0xf028C11465937a55B66af74B818181f49600C486",
       "clipper": "0x0c6eEaE3a36ec66B30A58917166D526f499e431B",
-      "uniswapCallee": "0xc1d3F1dB60DE17afD7770464BAb05c58129d7Ee0",
+      "uniswapCallee": "0x1f48dCbCE7fC91180492a7b083472924b4e8a44b",
       "uniswapRoute": [
         "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
         "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
@@ -61,7 +61,7 @@
       "erc20addrReserve": "0x3fE38b7b610C0ACD10296fEf69d9b18eB7a9eB1F",
       "joinAdapter": "0x92e18d7d36DD4f97D024F346Ef232eE96a073C4e",
       "clipper": "0x6f77799B3D36a61FdF8eb82E0DdEDcF4BA041042",
-      "uniswapCallee": "0xc1d3F1dB60DE17afD7770464BAb05c58129d7Ee0",
+      "uniswapCallee": "0x1f48dCbCE7fC91180492a7b083472924b4e8a44b",
       "uniswapRoute": [
         "0x50b7545627a5162F82A992c33b87aDc75187B218",
         "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
@@ -76,7 +76,7 @@
       "erc20addrReserve": "0x585E7bC75089eD111b656faA7aeb1104F5b96c15",
       "joinAdapter": "0xeD12464B448b0C9dC76aF95275963A4eae6a1c3c",
       "clipper": "0x940aA35E47d54a5EE4dc3C6Ff6Eb1bdec065c2A5",
-      "uniswapCallee": "0xc1d3F1dB60DE17afD7770464BAb05c58129d7Ee0",
+      "uniswapCallee": "0x1f48dCbCE7fC91180492a7b083472924b4e8a44b",
       "uniswapRoute": [
         "0x5947BB275c521040051D82396192181b413227A3",
         "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
@@ -107,7 +107,7 @@
       "erc20addrReserve": "0x454E67025631C065d3cFAD6d71E6892f74487a15",
       "joinAdapter": "0x136EF4EbB71c147969AFB9666D4b900756C64b27",
       "clipper": "0x8641BdBECE44c3f05b1991922f721C4585f22456",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXWETH-A": {
       "name": "STKTDJAVAXWETH-A",
@@ -133,7 +133,7 @@
       "erc20addrReserve": "0xFE15c2695F1F920da45C30AAE47d11dE51007AF9",
       "joinAdapter": "0x7dB700723a20511Beb367694e8c33b8dc23418bB",
       "clipper": "0x226d0e1AC4C8b6253caf5CEda067fb5a6EDCDF6F",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXWBTC-A": {
       "name": "STKTDJAVAXWBTC-A",
@@ -159,7 +159,7 @@
       "erc20addrReserve": "0xd5a37dC5C9A396A03dd1136Fc76A1a02B1c88Ffa",
       "joinAdapter": "0x8cCC3E5EAe76977C65936332d0BB082c50f21433",
       "clipper": "0x435D4017b6A4C21f25077ccd5849F083F3e20452",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXDAI-A": {
       "name": "STKTDJAVAXDAI-A",
@@ -185,7 +185,7 @@
       "erc20addrReserve": "0x87Dee1cC9FFd464B79e058ba20387c1984aed86a",
       "joinAdapter": "0x6061A183Ce7b75b78E60F8662cfbb88f69324d54",
       "clipper": "0x754e4D6fbbDdE2e77c390E4BAC54C7e0E48901Ab",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXUSDC-A": {
       "name": "STKTDJAVAXUSDC-A",
@@ -209,7 +209,7 @@
       "erc20addrReserve": "0xA389f9430876455C36478DeEa9769B7Ca4E3DDB1",
       "joinAdapter": "0x85A837a58abcF09c45C7871aC395039951F1Ba9c",
       "clipper": "0xbCa0650FF329211D3784C82196421A885FDB0451",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXUSDT-A": {
       "name": "STKTDJAVAXUSDT-A",
@@ -235,7 +235,7 @@
       "erc20addrReserve": "0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256",
       "joinAdapter": "0x60C725d424a057d5DFD1d9d2d5e5dd2Bf08B31cb",
       "clipper": "0x9E4D1b626a39065142420d518adA0654606e9AEa",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXLINK-A": {
       "name": "STKTDJAVAXLINK-A",
@@ -261,7 +261,7 @@
       "erc20addrReserve": "0x6F3a0C89f611Ef5dC9d96650324ac633D02265D3",
       "joinAdapter": "0x99F1F47393079FD19D206a935B09016619Cb3bd2",
       "clipper": "0xa4f9600534190d96bc60D33A3594E0b0869cAdaB",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJAVAXMIM-A": {
       "name": "STKTDJAVAXMIM-A",
@@ -287,7 +287,7 @@
       "erc20addrReserve": "0x781655d802670bbA3c89aeBaaEa59D3182fD755D",
       "joinAdapter": "0x5E0978e898A03463D9De497991E1C6278271c323",
       "clipper": "0x97B9187242fAB11A6b0922F1ba328B1C760e7d0f",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJUSDCJOE-A": {
       "name": "STKTDJUSDCJOE-A",
@@ -312,7 +312,7 @@
       "erc20addrReserve": "0x67926d973cD8eE876aD210fAaf7DFfA99E414aCf",
       "joinAdapter": "0xc1E1d478296F3b0F2CA9Cc88F620de0b791aBf27",
       "clipper": "0x8A0baDba6E13097AAa869b5BC25a8f32FbD46b3c",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     },
     "STKTDJUSDTJOE-A": {
       "name": "STKTDJUSDTJOE-A",
@@ -339,7 +339,7 @@
       "erc20addrReserve": "0x1643de2efB8e35374D796297a9f95f64C082a8ce",
       "joinAdapter": "0xC4861931532bcf4fb59Ead8080c22A3363389a76",
       "clipper": "0x2C5972dCc9886F5FaF9230148D7076dba5C39002",
-      "uniswapLPCallee": "0x9C009595F330CA8070e78b889183e7b8a96cB962"
+      "uniswapLPCallee": "0xd802621F65Bd96D76e84E49EecdED49C5acb105d"
     }
   },
   "txnReplaceTimeout": "60",

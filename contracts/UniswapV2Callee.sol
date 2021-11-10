@@ -123,6 +123,7 @@ contract UniswapV2CalleeDai is UniswapV2Callee {
             VaultLike vault = GemJoinLike(gemJoin).gem();
             VaultLike bridge = bridges[vault];
             if (bridge != VaultLike(0)) {
+                vault.approve(address(bridge), gemAmt);
                 bridge.withdraw(gemAmt, 1);
             } else {
                 vault.withdraw(gemAmt, 1, true);
