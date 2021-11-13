@@ -13,6 +13,7 @@ export default class UniswapAdaptor {
   _decNormalized;
   _decNormalized0 = BigNumber.from('10').pow(18);
   _decNormalized1 = BigNumber.from('10').pow(18);
+  _decNormalizedTarget = BigNumber.from('10').pow(18);
 
   constructor(assetAddress, callee, collateralName) {
     this._provider = network.provider;
@@ -29,6 +30,9 @@ export default class UniswapAdaptor {
         18 - Config.vars.collateral[collateralName].token1.decimals
       );
     }
+    this._decNormalizedTarget = BigNumber.from('10').pow(
+      18 - Config.vars.decimals
+    );
     this._callee = new ethers.Contract(
       callee, uniswapCalleeAbi, this._provider
     );
@@ -113,7 +117,7 @@ export default class UniswapAdaptor {
           ilkAmount.mul(this._decNormalized)
         );
         book.receiveAmount = ethers.utils.formatUnits(
-          offer0[offer0.length - 1].add(offer1[offer1.length - 1])
+          offer0[offer0.length - 1].add(offer1[offer1.length - 1]).mul(this._decNormalizedTarget)
         );
       } else {
         const offer = await _uniswap.getAmountsOut(
@@ -123,7 +127,7 @@ export default class UniswapAdaptor {
           offer[0].mul(this._decNormalized)
         );
         book.receiveAmount = ethers.utils.formatUnits(
-          offer[offer.length - 1]
+          offer[offer.length - 1].mul(this._decNormalizedTarget)
         );
       }
     } catch (e) {

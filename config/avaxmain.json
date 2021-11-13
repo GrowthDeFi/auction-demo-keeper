@@ -8,6 +8,7 @@
   "dog": "0x0dA4fefdAef2d283B438fDb5453934B7aF6f0B57",
   "cdpManager": "0x224C2697f5D0d999c2018CE71393AEB0A9ba02f4",
   "eth": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+  "decimals": 6,
   "collateral": {
     "STKXJOE-A": {
       "name": "STKXJOE-A",
