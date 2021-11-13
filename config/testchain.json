@@ -5,6 +5,7 @@
   "MakerOTCSupportMethods": "0xaE6a017F1adda2C8574acF2CCcAC733069eF33aa",
   "OasisDex": "0x06ef37A95603cb52e2dFF4C2b177C84Cdb3cE989",
   "UniswapV2Router": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+  "decimals": 18,
   "collateral": {
     "ETH-A": {
       "name": "ETH-A",

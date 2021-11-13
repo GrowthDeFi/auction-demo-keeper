@@ -8,6 +8,7 @@
   "dog": "0xDea7563440195eA7Ea83900DE38F603C25a37594",
   "cdpManager": "0x563d13664023a7d63463b8cdc443552c047642Cb",
   "eth": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+  "decimals": 18,
   "collateral": {
     "STKCAKE-A": {
       "name": "STKCAKE-A",
