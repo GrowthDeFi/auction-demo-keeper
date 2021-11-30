@@ -70,6 +70,7 @@
   "dynamicGasCoefficient": "1.125",
   "maxGasLimit": "2000000",
   "maxGasPrice": "10",
+  "profitAddr": "0x992d5e4128cA6329DF5448346F4F445D0ABBc6b9",
   "minProfitPercentage": "1.025",
   "minLotDaiValue": "0",
   "maxLotDaiValue": "1000000"

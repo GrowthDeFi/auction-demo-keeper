@@ -175,7 +175,7 @@ export default class keeper {
               lot,
               auction.price,
               minProfit,
-              this._wallet.address,
+              Config.vars.profitAddr,
               this._gemJoinAdapters[collateral.name],
               this._wallet,
               uniswap._callee.address
@@ -196,7 +196,7 @@ export default class keeper {
               lot,
               auction.price,
               minProfit,
-              this._wallet.address,
+              Config.vars.profitAddr,
               this._gemJoinAdapters[collateral.name],
               this._wallet,
               oasis._callee.address
