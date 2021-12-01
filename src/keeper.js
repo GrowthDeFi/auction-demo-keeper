@@ -266,6 +266,7 @@ export default class keeper {
       }
       const network = Config.vars.network;
       await sendTelegramMessage('<i>LiquidationBot (' + network + ') Initiated</i>');
+/*
       let interrupted = false;
       interrupt(async (e) => {
         if (!interrupted) {
@@ -276,6 +277,11 @@ export default class keeper {
           process.exit(0);
         }
       });
+*/
+      setTimeout(async () => {
+        await sendTelegramMessage('<i>LiquidationBot (' + network + ') Reset</i>');
+        process.exit(0);
+      }, 24 * 60 * 60 * 1000);
     }
     this._wallet = await setupWallet(network, this.walletPasswordPath, this.walletKeystorePath);
     for (const name in Config.vars.collateral) {
