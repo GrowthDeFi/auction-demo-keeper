@@ -29,8 +29,9 @@ export async function sendTelegramMessage(message, key = '') {
   }
 }
 
-export async function reportError(e, type, detail, prefix = '') {
+export async function reportError(e, type, detail) {
   const message = typeof e === 'object' && e !== null && 'message' in e ? e.message : String(e);
+  if (message.includes('SERVER_ERROR')) return;
   if (message.includes('502 Bad Gateway')) return;
   if (message.includes('Unknown Error')) return;
   if (message.includes('ETIMEDOUT')) return;
@@ -40,5 +41,5 @@ export async function reportError(e, type, detail, prefix = '') {
   if (message.includes('Too Many Requests')) return;
   if (message.includes('Could not find block')) return;
   if (message.includes('cannot query unfinalized data')) return;
-  await sendTelegramMessage(prefix + '<i>LiquidationBot (' + escapeHTML(detail) + ') ' + escapeHTML(type) + ' (' + escapeHTML(message) + ')</i>');
+  await sendTelegramMessage('<i>LiquidationBot (' + escapeHTML(detail) + ') ' + escapeHTML(type) + ' (' + escapeHTML(message) + ')</i>');
 }
