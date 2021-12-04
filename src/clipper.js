@@ -5,7 +5,7 @@ import Config from './singleton/config.js';
 import abacusAbi from '../abi/abacus.json';
 import clipperAbi from '../abi/clipper.json';
 import { Transact, GeometricGasPrice } from './transact.js';
-import { sendTelegramMessage, escapeHTML } from './telegram.js';
+import { sendTelegramMessage, escapeHTML, reportError } from './telegram.js';
 
 const decimals9 = BigNumber.from('1000000000');
 const decimals18 = ethers.utils.parseEther('1');
@@ -215,11 +215,8 @@ export default class Clipper {
     } catch (error) {
       console.error(error);
       { // telegram
-        const message = error instanceof Error ? error.message : String(error);
         const network = Config.vars.network;
-        const lines = [];
-        lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
-        await sendTelegramMessage(lines.join('\n'));
+        await reportError(error, 'Failure', network);
       }
     }
   }
@@ -275,11 +272,8 @@ export default class Clipper {
     } catch (error) {
       console.error(error);
       { // telegram
-        const message = error instanceof Error ? error.message : String(error);
         const network = Config.vars.network;
-        const lines = [];
-        lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
-        await sendTelegramMessage(lines.join('\n'));
+        await reportError(error, 'Failure', network);
       }
     }
     return false;

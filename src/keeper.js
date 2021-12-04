@@ -12,7 +12,7 @@ import fs from 'fs';
 import dog from '../abi/dog.json';
 import DssCdpManager from '../abi/DssCdpManager.json';
 import { Transact, GeometricGasPrice } from './transact.js';
-import { sendTelegramMessage, escapeHTML } from './telegram.js';
+import { sendTelegramMessage, escapeHTML, reportError } from './telegram.js';
 
 /* The Keeper module is the entry point for the
  ** auction Demo Keeper
@@ -380,11 +380,8 @@ export default class keeper {
               }
             } catch (error) {
               { // telegram
-                const message = error instanceof Error ? error.message : String(error);
                 const network = Config.vars.network;
-                const lines = [];
-                lines.push('<i>LiquidationBot (' + network + ') Failure (' + escapeHTML(message) + ')</i>');
-                await sendTelegramMessage(lines.join('\n'));
+                await reportError(error, 'Failure', network);
               }
               console.error(error);
             }
