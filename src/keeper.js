@@ -279,8 +279,8 @@ export default class keeper {
       });
 */
       setTimeout(async () => {
-        await sendTelegramMessage('<i>LiquidationBot (' + network + ') Reset</i>');
-        process.exit(0);
+        await sendTelegramMessage('<i>LiquidationBot (' + network + ') Forced Reset</i>');
+        setTimeout(() => process.exit(0), 3 * 1000);
       }, 24 * 60 * 60 * 1000);
     }
     this._wallet = await setupWallet(network, this.walletPasswordPath, this.walletKeystorePath);
