@@ -189,14 +189,17 @@ export default class Clipper {
           const ADDRESS_URL_PREFIX = {
             'bscmain': 'https://bscscan.com/address/',
             'avaxmain': 'https://snowtrace.io/address/',
+            'ftmmain': 'https://ftmscan.com/address/',
           };
           const TX_URL_PREFIX = {
             'bscmain': 'https://bscscan.com/tx/',
             'avaxmain': 'https://snowtrace.io/tx/',
+            'ftmmain': 'https://ftmscan.com/tx/',
           };
           const NATIVE_SYMBOL = {
             'bscmain': 'BNB',
             'avaxmain': 'AVAX',
+            'ftmmain': 'FTM',
           };
           const url = ADDRESS_URL_PREFIX[network] + address;
           const accountUrl = ADDRESS_URL_PREFIX[network] + account;
@@ -245,14 +248,17 @@ export default class Clipper {
             const ADDRESS_URL_PREFIX = {
               'bscmain': 'https://bscscan.com/address/',
               'avaxmain': 'https://snowtrace.io/address/',
+              'ftmmain': 'https://ftmscan.com/address/',
             };
             const TX_URL_PREFIX = {
               'bscmain': 'https://bscscan.com/tx/',
               'avaxmain': 'https://snowtrace.io/tx/',
+              'ftmmain': 'https://ftmscan.com/tx/',
             };
             const NATIVE_SYMBOL = {
               'bscmain': 'BNB',
               'avaxmain': 'AVAX',
+              'ftmmain': 'FTM',
             };
             const url = ADDRESS_URL_PREFIX[network] + address;
             const accountUrl = ADDRESS_URL_PREFIX[network] + account;

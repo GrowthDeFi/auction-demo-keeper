@@ -15,3 +15,7 @@ services:
     <<: *liquidationbot
     container_name: liquidationbot-avaxmain
     command: yarn run avaxmain
+  liquidationbot-ftmmain:
+    <<: *liquidationbot
+    container_name: liquidationbot-ftmmain
+    command: yarn run ftmmain
