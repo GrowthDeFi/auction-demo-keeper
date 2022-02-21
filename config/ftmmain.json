@@ -1,0 +1,533 @@
+{
+  "network": "ftmmain",
+  "rpcURL": "https://rpc.ftm.tools/",
+  "dai": "0x22A6aC883B2f5007486C0D0EBC520747c0702Ad5",
+  "daiJoin": "0x3Bf3C5146c5b1259f8886d3B2480aD53A835F795",
+  "UniswapV2Router": "0x16327E3FbDaCA3bcF7E38F5Af2599D2DDc33aE52",
+  "vat": "0xb2d474EAAB89DD0134B8A98a9AB38aC41a537c6C",
+  "dog": "0x7f70639F3aC04b2919d5bA1b397aDe484D87be4e",
+  "cdpManager": "0x62260035e5d3BeA0CC5Fd26A252CeBa550D559f0",
+  "eth": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+  "decimals": 6,
+  "collateral": {
+    "STKSPIFTMLQDR-A": {
+      "name": "STKSPIFTMLQDR-A",
+      "decimals": 18,
+      "token0": {
+        "name": "LQDR",
+        "decimals": 18,
+        "route": [
+          "0x10b620b2dbAC4Faa7D7FFD71Da486f5D44cd86f9",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x2FD8e6458f8AEA3C3370Ecf3357D754412c97C70",
+      "erc20addrReserve": "0x4Fe6f19031239F105F753D1DF8A0d24857D0cAA2",
+      "joinAdapter": "0x6d6e37f4fFC13ebA4B6e0158cE8753549152BF35",
+      "clipper": "0x7a78c6671ac68A91b4F163EE1Dc392741Cf83F05",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMFUSDT-A": {
+      "name": "STKSPIFTMFUSDT-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FUSDT",
+        "decimals": 6,
+        "route": [
+          "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x83CbBea0074711dcbED2CB7936A22F4C59D624a7",
+      "erc20addrReserve": "0xd14Dd3c56D9bc306322d4cEa0E1C49e9dDf045D4",
+      "joinAdapter": "0x606B318bB7F8b4DfB560Bac0A5FBcE1114F839eF",
+      "clipper": "0xDC6d2e2F40ABFa9A0dc695794beFD8E9aFFF10fB",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMWBTC-A": {
+      "name": "STKSPIFTMWBTC-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "WBTC",
+        "decimals": 8,
+        "route": [
+          "0x321162Cd933E2Be498Cd2267a90534A804051b11",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x1fb4Abc302B2EB5ed3c4dD59C884eBB2b0cD1528",
+      "erc20addrReserve": "0x279b2c897737a50405ED2091694F225D83F2D3bA",
+      "joinAdapter": "0x6061A183Ce7b75b78E60F8662cfbb88f69324d54",
+      "clipper": "0xf0B8E540103b504A1EC6072d06fE369380D6FCb0",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMUSDC-A": {
+      "name": "STKSPIFTMUSDC-A",
+      "decimals": 18,
+      "token0": {
+        "name": "USDC",
+        "decimals": 6,
+        "route": [
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x0697ef69527147A3757516ecF6b1ff45652A2298",
+      "erc20addrReserve": "0xe7E90f5a767406efF87Fdad7EB07ef407922EC1D",
+      "joinAdapter": "0x85A837a58abcF09c45C7871aC395039951F1Ba9c",
+      "clipper": "0xf4C52ecA58D17d09C1bC0265f34Cd0c8d587fCb3",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMWETH-A": {
+      "name": "STKSPIFTMWETH-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "WETH",
+        "decimals": 18,
+        "route": [
+          "0x74b23882a30290451A17c44f4F05243b6b58C76d",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x50714fF57E8cCf127E27Eba5Dfd1b82a4F918FE3",
+      "erc20addrReserve": "0x613BF4E46b4817015c01c6Bb31C7ae9edAadc26e",
+      "joinAdapter": "0x60C725d424a057d5DFD1d9d2d5e5dd2Bf08B31cb",
+      "clipper": "0x268eC244768f6184eFb2C59AAfbd44697a05265b",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMMIM-A": {
+      "name": "STKSPIFTMMIM-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "MIM",
+        "decimals": 18,
+        "route": [
+          "0x82f0B8B456c1A451378467398982d4834b6829c1",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0xDA2AE62e2B71ad3000BB75acdA2F8f68DC88aCE4",
+      "erc20addrReserve": "0xB32b31DfAfbD53E310390F641C7119b5B9Ea0488",
+      "joinAdapter": "0x99F1F47393079FD19D206a935B09016619Cb3bd2",
+      "clipper": "0x53A7704Fcb87c6370773b79245fddA95A1663F26",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMSPIRIT-A": {
+      "name": "STKSPIFTMSPIRIT-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "SPIRIT",
+        "decimals": 18,
+        "route": [
+          "0x5Cc61A78F164885776AA610fb0FE1257df78E59B",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0xF99A8Cd2b651893A3F8fb1045E4101e63D82264c",
+      "erc20addrReserve": "0x30748322B6E34545DBe0788C421886AEB5297789",
+      "joinAdapter": "0x00793e8D7ccE68D3C196Fa40ba96494311274Ed2",
+      "clipper": "0x953798B83C0eC5d69933BD0e116aB8884BE53092",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMFRAX-A": {
+      "name": "STKSPIFTMFRAX-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "FRAX",
+        "decimals": 18,
+        "route": [
+          "0xdc301622e621166BD8E82f2cA0A26c13Ad0BE355",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0xC1D8EE2b67440e2bae0Ca608F3DC0a5D3B83eE0F",
+      "erc20addrReserve": "0x7ed0cdDB9BB6c6dfEa6fB63E117c8305479B8D7D",
+      "joinAdapter": "0x2ff2cf32cB3a6F1f7b7Dc22e54A336EFd6ff86Db",
+      "clipper": "0x63FB358d72F897B603fd3d2a919D0F4049721557",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPIFTMMAI-A": {
+      "name": "STKSPIFTMMAI-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "MAI",
+        "decimals": 18,
+        "route": [
+          "0xfB98B335551a418cD0737375a2ea0ded62Ea213b",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x4cea7726Eea4a0B342f8422D003Df735eAfDB195",
+      "erc20addrReserve": "0x51Eb93ECfEFFbB2f6fE6106c4491B5a0B944E8bd",
+      "joinAdapter": "0x9Bc2b99376979C36f2EBBA701ca39CbcA4502492",
+      "clipper": "0xb150998829DC99c020456A4a951a664FEd709076",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMBOO-A": {
+      "name": "STKSPOFTMBOO-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "BOO",
+        "decimals": 18,
+        "route": [
+          "0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x2f797A09AcD7012782714EC62a64c02Db4Cd6d45",
+      "erc20addrReserve": "0xEc7178F4C41f346b2721907F5cF7628E388A7a58",
+      "joinAdapter": "0xd8BfF1BE3d57d874003340A91018480BD53a17C4",
+      "clipper": "0x43312fB48861256CdB46c876df17a3231d6edA3d",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMUSDC-A": {
+      "name": "STKSPOFTMUSDC-A",
+      "decimals": 18,
+      "token0": {
+        "name": "USDC",
+        "decimals": 6,
+        "route": [
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x91CFBb392e6aF98e1b0fDD483b660bAFd049f61F",
+      "erc20addrReserve": "0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c",
+      "joinAdapter": "0x4c74e6A914F748125cFB3f0978A19531aDA1784E",
+      "clipper": "0x3a52B0BdED843Ae1a0BA61961A5f016D13d3b375",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMDAI-A": {
+      "name": "STKSPOFTMDAI-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "DAI",
+        "decimals": 18,
+        "route": [
+          "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0xaFe49F040F934174A9FDFf24b1F219047dC3225e",
+      "erc20addrReserve": "0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428",
+      "joinAdapter": "0x21E4F0d97422fE6A119bE3f3F148cb0189eDF4Fe",
+      "clipper": "0x5F3826f1F2F7659e26b49AE761201Ac2b4dF0E51",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMSUSHI-A": {
+      "name": "STKSPOFTMSUSHI-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "SUSHI",
+        "decimals": 18,
+        "route": [
+          "0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x9b1E10f73851B0d2bF401E0e82260eF64740296F",
+      "erc20addrReserve": "0xf84E313B36E86315af7a06ff26C8b20e9EB443C3",
+      "joinAdapter": "0xb8836beA18427e196469D949205813daaBE77490",
+      "clipper": "0x649a385eFc47cB0C7C368CA63eF074C8Bf97a22F",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMLINK-A": {
+      "name": "STKSPOFTMLINK-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "LINK",
+        "decimals": 18,
+        "route": [
+          "0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x3B758ee4ffa3f29ec0827ED5939F0595c53c5e42",
+      "erc20addrReserve": "0x89d9bC2F2d091CfBFc31e333D6Dc555dDBc2fd29",
+      "joinAdapter": "0x507EcDA1f9Dc31C45B9a6EF3647601C820B08c02",
+      "clipper": "0x5D94520f478b57FCec2e2a6f47c57870Ee47dDe5",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMWETH-A": {
+      "name": "STKSPOFTMWETH-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "WETH",
+        "decimals": 18,
+        "route": [
+          "0x74b23882a30290451A17c44f4F05243b6b58C76d",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x1c312bcf04B4640516894D1e8AC20B8CcC764c0E",
+      "erc20addrReserve": "0xf0702249F4D3A25cD3DED7859a165693685Ab577",
+      "joinAdapter": "0xbA352eB61132B07c3ab4410a7049b2983a8eA850",
+      "clipper": "0x465221137c7987A2a85978Eb75e162F56E521A8b",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMFUSDT-A": {
+      "name": "STKSPOFTMFUSDT-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FUSDT",
+        "decimals": 6,
+        "route": [
+          "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x91D350d539dCFc8a88e665C1247283ef4bF2FD7e",
+      "erc20addrReserve": "0x5965E53aa80a0bcF1CD6dbDd72e6A9b2AA047410",
+      "joinAdapter": "0x6BCef06e59da900324dfC8396879047413D56eCf",
+      "clipper": "0x18EFad3Fa07cbC07f396D8Aa920de296F461E6eD",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMMIM-A": {
+      "name": "STKSPOFTMMIM-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "MIM",
+        "decimals": 18,
+        "route": [
+          "0x82f0B8B456c1A451378467398982d4834b6829c1",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x7abF269faC9E8324dE364F26ed3B8379C7F0629E",
+      "erc20addrReserve": "0x6f86e65b255c9111109d2D2325ca2dFc82456efc",
+      "joinAdapter": "0xa4fE18D9f1B99c8f20887Ac3BDdb510bB7ed1345",
+      "clipper": "0x45ADa522F6da2cC10082b94B5F8139e05881A37e",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    },
+    "STKSPOFTMSCREAM-A": {
+      "name": "STKSPOFTMSCREAM-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "SCREAM",
+        "decimals": 18,
+        "route": [
+          "0xe0654C8e6fd4D733349ac7E09f6f23DA256bF475",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0x4d5727523127cfE9F0088f05bCa9B2afd4Ac87e5",
+      "erc20addrReserve": "0x30872e4fc4edbFD7a352bFC2463eb4fAe9C09086",
+      "joinAdapter": "0x61BC63F3917A31Da84188032E87F702286BF7205",
+      "clipper": "0x58B03ccDc32d34B0f3cBF916a581b2D882cBE65d",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+
+      "uniswapLPCallee": "0x0000000000000000000000000000000000000000"
+
+    }
+  },
+  "txnReplaceTimeout": "60",
+  "delay": "60",
+  "initialGasOffsetGwei": "0",
+  "dynamicGasCoefficient": "1.000",
+  "maxGasLimit": "5000000",
+  "maxGasPrice": "300",
+  "profitAddr": "0x934BF5461795B4a2aC5673c1fb3859E8fA48d9bb",
+  "minProfitPercentage": "1.000",
+  "minLotDaiValue": "0",
+  "maxLotDaiValue": "1000000"
+}
