@@ -52,6 +52,7 @@ interface LpTokenLike is TokenLike {
 interface VaultLike is TokenLike
 {
     function deposit(uint256) external;
+    function deposit(uint256, uint256, bool) external;
     function withdraw(uint256, uint256) external;
     function withdraw(uint256, uint256, bool) external;
 }
@@ -77,6 +78,7 @@ interface UniswapV2FactoryLike {
 // This Callee contract exists as a standalone contract
 contract UniswapV2Callee {
     DssPsmLike              public dssPsm;
+    VaultLike               public dssPsmBridge;
     UniswapV2Router02Like   public uniRouter02;
     DaiJoinLike             public daiJoin;
     TokenLike               public dai;
@@ -93,8 +95,9 @@ contract UniswapV2Callee {
         z = add(x, sub(y, 1)) / y;
     }
 
-    function setUp(address dssPsm_, address uniRouter02_, address daiJoin_) internal {
+    function setUp(address dssPsm_, address dssPsmBridge_, address uniRouter02_, address daiJoin_) internal {
         dssPsm = DssPsmLike(dssPsm_);
+        dssPsmBridge = VaultLike(dssPsmBridge_);
         uniRouter02 = UniswapV2Router02Like(uniRouter02_);
         daiJoin = DaiJoinLike(daiJoin_);
         dai = daiJoin.dai();
@@ -111,8 +114,8 @@ contract UniswapV2Callee {
 contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
     mapping (VaultLike => VaultLike) public bridges;
 
-    constructor(address dssPsm_, address uniRouter02_, address daiJoin_, VaultLike[] memory vaults_, VaultLike[] memory bridges_) public {
-        setUp(dssPsm_, uniRouter02_, daiJoin_);
+    constructor(address dssPsm_, address dssPsmBridge_, address uniRouter02_, address daiJoin_, VaultLike[] memory vaults_, VaultLike[] memory bridges_) public {
+        setUp(dssPsm_, dssPsmBridge_, uniRouter02_, daiJoin_);
         for (uint256 i = 0; i < vaults_.length; i++) {
             bridges[vaults_[i]] = bridges_[i];
         }
@@ -139,13 +142,18 @@ contract UniswapV2LpTokenCalleeDai is UniswapV2Callee {
         }
         TokenLike stable = TokenLike(path[path.length - 1]);
         uint256 amountOut = stable.balanceOf(address(this));
-        TokenLike psmgem = GemJoinLike(dssPsm.gemJoin()).gem();
-        if (stable != psmgem) {
-            stable.approve(address(psmgem), amountOut);
-            VaultLike(address(psmgem)).deposit(amountOut);
+        if (dssPsmBridge != VaultLike(0)) {
+            stable.approve(address(dssPsmBridge), amountOut);
+            dssPsmBridge.deposit(amountOut, 1, true);
+        } else {
+            TokenLike psmgem = GemJoinLike(dssPsm.gemJoin()).gem();
+            if (stable != psmgem) {
+                stable.approve(address(psmgem), amountOut);
+                VaultLike(address(psmgem)).deposit(amountOut);
+            }
+            psmgem.approve(dssPsm.gemJoin(), amountOut);
+            dssPsm.sellGem(address(this), amountOut);
         }
-        psmgem.approve(dssPsm.gemJoin(), amountOut);
-        dssPsm.sellGem(address(this), amountOut);
     }
 
     function clipperCall(
