@@ -348,7 +348,7 @@
   "initialGasOffsetGwei": "0",
   "dynamicGasCoefficient": "1.000",
   "maxGasLimit": "5000000",
-  "maxGasPrice": "25",
+  "maxGasPrice": "100",
   "profitAddr": "0x6F926fFBe338218b06D2FC26eC59b52Fd5b125cE",
   "minProfitPercentage": "1.000",
   "minLotDaiValue": "0",
