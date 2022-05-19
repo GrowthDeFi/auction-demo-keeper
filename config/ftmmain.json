@@ -482,6 +482,80 @@
       "clipper": "0x58B03ccDc32d34B0f3cBF916a581b2D882cBE65d",
       "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
       "uniswapLPCallee": "0x479E546eB535E6FbA0Aa4BAEdf1fC00843F1F437"
+    },
+    "STKXBOO-A": {
+      "name": "STKXBOO-A",
+      "decimals": 18,
+      "erc20addr": "0x30463d33735677B4E70f956e3dd61c6e94D70DFe",
+      "erc20addrBridge": "0x31BC55A63CB885686cC7E32B3c8Bdc1d0EbAc899",
+      "erc20addrReserve": "0xa48d959AE2E88f1dAA7D5F611E01908106dE7598",
+      "joinAdapter": "0xcbCFC27be6b2eD4eD261AD0E6212534a08c7B1F6",
+      "clipper": "0x52Ee6fBecDd709AD1936e3241946B786979520A1",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+      "uniswapCallee": "0x5c1528A5aA3bE2D213D47439aeA64A2821ea4411",
+      "uniswapRoute": [
+        "0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE",
+        "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+        "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+      ]
+    },
+    "STKSPOFTMBOOV2-A": {
+      "name": "STKSPOFTMBOOV2-A",
+      "decimals": 18,
+      "token0": {
+        "name": "FTM",
+        "decimals": 18,
+        "route": [
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "token1": {
+        "name": "BOO",
+        "decimals": 18,
+        "route": [
+          "0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE",
+          "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+          "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+        ]
+      },
+      "erc20addr": "0xaebd31E9FFcB222feE947f22369257cEcf1F96CA",
+      "erc20addrReserve": "0xEc7178F4C41f346b2721907F5cF7628E388A7a58",
+      "joinAdapter": "0x7c414040fDd78c4d37131B1C59d051d56bee8645",
+      "clipper": "0xe55FB11e8322D663Fc2210c5CA8D85D9774A6d36",
+      "UniswapV2Router": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+      "uniswapLPCallee": "0x479E546eB535E6FbA0Aa4BAEdf1fC00843F1F437"
+    },
+    "CLQDR-A": {
+      "name": "CLQDR-A",
+      "decimals": 18,
+      "erc20addr": "0x814c66594a22404e101FEcfECac1012D8d75C156",
+      "erc20addrBridge": "0xD96e7D4723e68b1f8154D92065b309501FB3f4dD",
+      "erc20addrReserve": "0x10b620b2dbAC4Faa7D7FFD71Da486f5D44cd86f9",
+      "joinAdapter": "0xe5fb3D583660e57b1f616f89Ae98dfb6e3c37f99",
+      "clipper": "0xBfc0a4714C8de532F5a2E9c20185752a902cD262",
+      "uniswapCallee": "0x6B93640c772D88e17A69100b91c620493224Bd7B",
+      "uniswapRoute": [
+        "0x10b620b2dbAC4Faa7D7FFD71Da486f5D44cd86f9",
+        "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+        "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+      ]
+    },
+    "SLINSPIRIT-A": {
+      "name": "SLINSPIRIT-A",
+      "decimals": 18,
+      "erc20addr": "0x3F569724ccE63F7F24C5F921D5ddcFe125Add96b",
+      "erc20addrBridge": "0xc6Ae876c407B9FA102651386E7E5Aeb4148Cb210",
+      "erc20addrReserve": "0xc5713B6a0F26bf0fdC1c52B90cd184D950be515C",
+      "joinAdapter": "0x726d946BBF3d0E6f9e5078D4F5e1f0014c37288F",
+      "clipper": "0x0e7482C50048628858d54AeC7af097765899a0b6",
+      "uniswapCallee": "0x6B93640c772D88e17A69100b91c620493224Bd7B",
+      "uniswapRoute": [
+        "0xc5713B6a0F26bf0fdC1c52B90cd184D950be515C",
+        "0x5Cc61A78F164885776AA610fb0FE1257df78E59B",
+        "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+        "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+      ]
     }
   },
   "txnReplaceTimeout": "60",
