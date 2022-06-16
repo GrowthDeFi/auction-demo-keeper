@@ -176,7 +176,7 @@ export default class Clipper {
     try {
       const txn = new Transact(take_transaction, _signer, Config.vars.txnReplaceTimeout, gasStrategy);
       const response = await txn.transact_async();
-      if (response != undefined) {
+      if (response != undefined && response.hash != undefined) {
         console.log(`Auction ${auctionId} Take Tx Hash ${response.hash}`);
         const provider = network.provider;
         { // telegram
@@ -235,7 +235,7 @@ export default class Clipper {
         const redo_transaction = await this._clipper.populateTransaction.redo(auctionId, kprAddress);
         const txn = new Transact(redo_transaction, _signer, Config.vars.txnReplaceTimeout, gasStrategy);
         const response = await txn.transact_async();
-        if (response != undefined) {
+        if (response != undefined && response.hash != undefined) {
           console.log(`Redone auction ${auctionId} Tx hash: ${response.hash}`);
           const provider = network.provider;
           { // telegram

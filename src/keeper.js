@@ -343,7 +343,7 @@ export default class keeper {
             try {
               const txn = new Transact(bark_transaction, this._wallet, Config.vars.txnReplaceTimeout, gasStrategy);
               const response = await txn.transact_async();
-              if (response.hash != undefined) {
+              if (response != undefined && response.hash != undefined) {
                 console.log(`Cdp ${i} Bark Tx Hash ${response.hash}`);
                 const provider = network.provider;
                 { // telegram
